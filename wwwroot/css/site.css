@@ -1,0 +1,103 @@
+:root {
+  color-scheme: light;
+  --page: #f5f6f8;
+  --surface: #ffffff;
+  --text: #202733;
+  --muted: #647082;
+  --line: #e2e6eb;
+  --blue: #2864c5;
+  --blue-hover: #1f50a0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.page {
+  width: min(100% - 32px, 680px);
+  margin: 0 auto;
+  padding: 64px 0 32px;
+}
+
+.page-header { margin-bottom: 30px; }
+.site-label { margin: 0 0 8px; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .08em; }
+h1, h2, h3 { line-height: 1.25; }
+h1 { margin: 0; font-size: clamp(32px, 7vw, 42px); letter-spacing: -.04em; }
+.intro { margin: 10px 0 0; color: var(--muted); }
+
+.panel {
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgb(26 39 58 / 4%);
+}
+
+.download-section { margin-bottom: 18px; }
+h2 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
+.file-details { margin: 8px 0 18px; color: var(--muted); font-size: 14px; }
+.file-details span[aria-hidden] { padding: 0 4px; color: #a0a9b5; }
+
+.download-button {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.download-button[href] { cursor: pointer; }
+.download-button[href]:hover { background: var(--blue-hover); }
+.download-button[aria-disabled="true"] { background: #8995a5; cursor: default; }
+.download-note { margin: 10px 0 0; color: var(--muted); font-size: 13px; text-align: center; }
+
+.guide-intro { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+.steps { margin: 23px 0 0; padding: 0; list-style: none; counter-reset: guide-step; }
+.steps li {
+  position: relative;
+  padding: 0 0 20px 42px;
+  border-left: 1px solid var(--line);
+  counter-increment: guide-step;
+}
+.steps li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.steps li::before {
+  position: absolute;
+  top: 0;
+  left: -14px;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d5deeb;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--blue);
+  content: counter(guide-step);
+  font-size: 12px;
+  font-weight: 600;
+}
+.steps h3 { margin: 0 0 3px; font-size: 16px; }
+.steps p { margin: 0; color: var(--muted); font-size: 14px; }
+.page-footer { padding-top: 22px; color: var(--muted); font-size: 12px; text-align: center; }
+
+@media (max-width: 480px) {
+  .page { padding-top: 38px; }
+  .panel { padding: 22px 19px; }
+}
