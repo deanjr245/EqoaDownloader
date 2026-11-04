@@ -1,24 +1,31 @@
 :root {
-  color-scheme: light;
-  --page: #f5f6f8;
-  --surface: #ffffff;
-  --text: #202733;
-  --muted: #647082;
-  --line: #e2e6eb;
-  --blue: #2864c5;
-  --blue-hover: #1f50a0;
+  color-scheme: dark;
+  --page: #0b1020;
+  --surface: #121a2b;
+  --panel: #1a2236;
+  --text: #edf2ff;
+  --muted: #aab7d1;
+  --line: #2a3550;
+  --blue: #6aa7ff;
+  --blue-hover: #8bb8ff;
+  --step-dot-bg: #151d2f;
+  --step-dot-border: #394867;
+  --button-disabled: #5c6883;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: var(--page);
+  background: radial-gradient(circle at top, #111d31 0%, var(--page) 48%);
   color: var(--text);
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
+
+a { color: var(--blue); }
+a:hover { color: var(--blue-hover); }
 
 .page {
   width: min(100% - 32px, 680px);
@@ -36,14 +43,14 @@ h1 { margin: 0; font-size: clamp(32px, 7vw, 42px); letter-spacing: -.04em; }
   padding: 26px 28px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--surface);
-  box-shadow: 0 2px 8px rgb(26 39 58 / 4%);
+  background: rgba(18, 26, 43, 0.96);
+  box-shadow: 0 12px 28px rgb(5 8 17 / 38%);
 }
 
 .download-section { margin-bottom: 18px; }
 h2 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
 .file-details { margin: 8px 0 18px; color: var(--muted); font-size: 14px; }
-.file-details span[aria-hidden] { padding: 0 4px; color: #a0a9b5; }
+.file-details span[aria-hidden] { padding: 0 4px; color: #dfe7fb; }
 
 .download-button {
   width: 100%;
@@ -55,17 +62,18 @@ h2 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
   border: 0;
   border-radius: 6px;
   background: var(--blue);
-  color: #fff;
+  color: #08111d;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
   text-align: center;
   overflow-wrap: anywhere;
+  box-shadow: 0 10px 22px rgb(106 167 255 / 26%);
 }
 
 .download-button[href] { cursor: pointer; }
 .download-button[href]:hover { background: var(--blue-hover); }
-.download-button[aria-disabled="true"] { background: #8995a5; cursor: default; }
+.download-button[aria-disabled="true"] { background: var(--button-disabled); color: #dfe7fb; cursor: default; box-shadow: none; }
 .download-note { margin: 10px 0 0; color: var(--muted); font-size: 13px; text-align: center; }
 
 .guide-intro { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
@@ -85,13 +93,13 @@ h2 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
   height: 27px;
   display: grid;
   place-items: center;
-  border: 1px solid #d5deeb;
+  border: 1px solid var(--step-dot-border);
   border-radius: 50%;
-  background: var(--surface);
+  background: var(--step-dot-bg);
   color: var(--blue);
   content: counter(guide-step);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .steps h3 { margin: 0 0 3px; font-size: 16px; }
 .steps p { margin: 0; color: var(--muted); font-size: 14px; }
