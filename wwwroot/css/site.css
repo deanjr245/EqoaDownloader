@@ -72,7 +72,7 @@ h2 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
 }
 
 .download-button[href] { cursor: pointer; }
-.download-button[href]:hover { background: var(--blue-hover); }
+.download-button[href]:hover { background: var(--blue-hover); color: #08111d; }
 .download-button[aria-disabled="true"] { background: var(--button-disabled); color: #dfe7fb; cursor: default; box-shadow: none; }
 .download-note { margin: 10px 0 0; color: var(--muted); font-size: 13px; text-align: center; }
 
